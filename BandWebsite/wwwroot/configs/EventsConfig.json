@@ -1,0 +1,88 @@
+{
+  "Events": [
+    {
+      "Date": "8/4/2024",
+      "Time": "6:00 PM",
+      "Location": "Goat Patch Brewering Company",
+      "LocationUrl": "",
+      "Description": "Sunday Summer Music Series"
+    },
+    {
+      "Date": "7/12/2024",
+      "Time": "6:00 PM",
+      "Location": "Bristol Brewery",
+      "LocationUrl": "",
+      "Description": "Bristol Music in the Yard"
+    },
+    {
+      "Date": "11/2/2022",
+      "Time": "6:30 PM",
+      "Location": "Tokki Bar",
+      "LocationUrl": "https://www.facebook.com/events/430832925783449",
+      "Description": "FBS @ Tokki"
+    },
+    {
+      "Date": "9/23/2023",
+      "Time": "4:00 PM",
+      "Location": "Red Leg Brewery",
+      "LocationUrl": "https://www.facebook.com/events/1374690613474216",
+      "Description": "FBS @ Red Leg"
+    },
+    {
+      "Date": "11/18/2023",
+      "Time": "6:30 PM",
+      "Location": "Storybook Brewery",
+      "LocationUrl": "https://www.facebook.com/events/321858847132181",
+      "Description": "Music and Beer affair for Care And Share"
+    },
+    {
+      "Date": "5/24/2024",
+      "Time": "6:30 PM",
+      "Location": "Storybook Brewery",
+      "LocationUrl": "https://www.facebook.com/events/318918827891665",
+      "Description": "Sizzle at Storybook"
+    },
+    {
+      "Date": "5/24/2024",
+      "Time": "6:30 PM",
+      "Location": "Storybook Brewery",
+      "LocationUrl": "https://www.facebook.com/events/450602650956727",
+      "Description": "Live with Father Bacon and The Sizzle"
+    },
+    {
+      "Date": "4/11/2024",
+      "Time": "6:30 PM",
+      "Location": "Deuces Wild - Main",
+      "LocationUrl": "https://www.facebook.com/events/1641215566622355",
+      "Description": "Taproom Tunes"
+    },
+    {
+      "Date": "2/10/2024",
+      "Time": "7:00 PM",
+      "Location": "Storybook Brewery",
+      "LocationUrl": "https://www.facebook.com/events/865795898482174",
+      "Description": "Winter Beach Party @ Storybook"
+    },
+    {
+      "Date": "10/14/2023",
+      "Time": "7:00 PM",
+      "Location": "Deuces Wild T-Gap",
+      "LocationUrl": "https://www.facebook.com/events/865795898482174",
+      "Description": "Father Bacon & The Sizzle at Deuces Wild Brewery (TGAP)"
+    },
+    {
+      "Date": "8/20/2022",
+      "Time": "7:00 PM",
+      "Location": "Deuces Wild T-Gap",
+      "LocationUrl": "https://www.facebook.com/events/600116381607696",
+      "Description": "Father Bacon & The Sizzle at Deuces Wild Brewery (TGAP)"
+    },
+    {
+      "Date": "7/30/2023",
+      "Time": "07:00 PM",
+      "Location": "Deuces Wild T-Gap",
+      "LocationUrl": "https://www.facebook.com/events/950839509480001",
+      "Description": "Taproom Tunes w/ Father Bacon and the Sizzle"
+    }
+  ]
+}
