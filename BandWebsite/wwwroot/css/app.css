@@ -59,11 +59,3 @@ input, select, textarea {
     font-family: 'AbstractGroovy';
     src: url('../fonts/AbstractGroovy-K7Zdy.ttf') format('truetype');
 }
-
-.row-striped:nth-of-type(odd) {
-    background-color: #efefef;
-}
-
-.row-striped:nth-of-type(even) {
-    background-color: #ffffff;
-}
