@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BandWebsite",
   "resources": {
-    "hash": "sha256-PJEa8LXrJjyBV3jS+x5wrTeXpjJQTzZ+KQmRYg1tAHk=",
+    "hash": "sha256-f6JzRsyahlejySAl1DP+GYhI6cQkJcmzeAODW4RF03c=",
     "jsModuleNative": {
       "dotnet.native.8.0.6.suuomc2hr0.js": "sha256-YU6M9+jtDVnB8/wtrgIndOstzNh778Ls8g9XnbjorSk="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "BandWebsite.wasm": "sha256-RotByOAYrPMPgzfL6CSQzZrUZLYPDfAfaZXRDn8FGBo=",
+      "BandWebsite.wasm": "sha256-JAAGFiJ+n65kiixJld8b+tZAZ5mNMmQyT4vVZxM98HQ=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-/omRyQtgiDBmIm4zgNciwLA6WyveNqEBqnkNLTIX6GA=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-CU23H6Kdz2g0yYgY6FDsO1UP4m/lK1+RcYch7u0i1Zc=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-LYJGTqka6p2RaQhwjm0nbX5muzjO6rM8oTE9uoUmGBs=",
