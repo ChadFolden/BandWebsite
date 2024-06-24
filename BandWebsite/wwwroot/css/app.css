@@ -5,7 +5,7 @@
     color: black;
     height: 100%;
     width: 100%;
-    font-family: 'a Abstract Groovy';
+    font-family: 'AbstractGroovy';
     background-image: url('../images/wwwroot/fatherbaconsizzle_small_oval_whiteborder.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -55,3 +55,15 @@ input, select, textarea {
         text-decoration: none;
     }
 
+@font-face {
+    font-family: 'AbstractGroovy';
+    src: url('../fonts/AbstractGroovy-K7Zdy.ttf') format('truetype');
+}
+
+.row-striped:nth-of-type(odd) {
+    background-color: #efefef;
+}
+
+.row-striped:nth-of-type(even) {
+    background-color: #ffffff;
+}

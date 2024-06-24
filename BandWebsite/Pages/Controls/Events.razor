@@ -18,12 +18,12 @@
                 @if (UpcomingEvents != null && UpcomingEvents.Any())
                 {
                     <ul class="list-group mt-3">
-                        @foreach (var eventItem in UpcomingEvents)
+                        @foreach (var eventItem in UpcomingEvents.Select((value, index) => new { value, index }))
                         {
-                            <li class="list-group-item">
-                                <h5>@eventItem.Description</h5>
-                                <p>@eventItem.Date.ToShortDateString() @eventItem.Time</p>
-                                <p>@eventItem.Location - <a href="@eventItem.LocationUrl" target="_blank">View Location</a></p>
+                            <li class="list-group-item border border-dark table table-striped @(eventItem.index % 2 == 0 ? "bg-dark text-white": "bg-light")">
+                                <h5>@eventItem.value.Description</h5>
+                                <p>@eventItem.value.Date.ToShortDateString() @eventItem.value.Time</p>
+                                <p>@eventItem.value.Location - <a href="@eventItem.value.LocationUrl" target="_blank">View Location</a></p>
                             </li>
                         }
                     </ul>
@@ -37,12 +37,12 @@
                 @if (PastEvents != null && PastEvents.Any())
                 {
                     <ul class="list-group mt-3">
-                        @foreach (var eventItem in PastEvents)
+                        @foreach (var eventItem in PastEvents.Select((value, index) => new { value, index }))
                         {
-                            <li class="list-group-item">
-                                <h5>@eventItem.Description</h5>
-                                <p>@eventItem.Date.ToShortDateString() @eventItem.Time</p>
-                                <p>@eventItem.Location - <a href="@eventItem.LocationUrl" target="_blank">View Location</a></p>
+                            <li class="list-group-item border border-dark table table-striped @(eventItem.index % 2 == 0 ? "bg-dark text-white": "bg-light")">
+                                <h5>@eventItem.value.Description</h5>
+                                <p>@eventItem.value.Date.ToShortDateString() @eventItem.value.Time</p>
+                                <p>@eventItem.value.Location - <a href="@eventItem.value.LocationUrl" target="_blank">View Location</a></p>
                             </li>
                         }
                     </ul>
