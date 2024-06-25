@@ -10,7 +10,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-size: 30%;
+    background-color: rgba(0, 0, 0, 0.7);  Semi-transparent background
 }
 
 input, select, textarea {
@@ -20,9 +21,10 @@ input, select, textarea {
 
 .section {
     padding: 2rem;
-    text-align: center;
+    /* text-align: center; */
     position: relative;
     width: 85%;
+    height: 100%;
     background-color: rgb(255, 255, 255, 0.95); /* Semi-transparent background */
     border-style: solid;
     border-color: black;

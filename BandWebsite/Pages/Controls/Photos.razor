@@ -4,42 +4,34 @@
 
 <section id="photosX" class="section">
     <h2>Photos</h2>
-    <div id="carouselPhotos" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div id="carouselPhotos" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            @for (int i = 0; i <= AllPhotos.Count; i++){
+                <button type="button" data-bs-target="#carouselPhotos" data-bs-slide-to="@i" class="bg-dark @(i == 0 ? "active ria-current='true''" : "")" aria-label="Slide @i"></button>
+            }
+        </div>
+        <!-- Items -->
         <div class="carousel-inner">
             @for (int i = 0; i < AllPhotos.Count; i++)
             {
-                <div class="carousel-item @(i == 0 ? "active" : "")">
-                    <iframe src="@AllPhotos[i].Url" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" alt="Father Bacon and the Sizzle Photo"></iframe>
+                <div class="carousel-item @(i == 0 ? "active" : "") flex justify-center items-center w-full" data-bs-interval="5000" style="height:600px">
+                    <iframe src="@AllPhotos[i].Url" style="height:100%;width:100%;padding:70px" scrolling="no" alt="Father Bacon and the Sizzle Photo" />
                 </div>
             }
 
-            <div class="carousel-item" style="height:500px; width:500px;">
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://www.facebook.com/FatherBaconSizzle/photos" style="width:800px; text-align: center;">See more photos on our facebook page</a>
+            <div class="carousel-item text-center align-middle" style="height: 600px;">
+                <a href="https://www.facebook.com/FatherBaconSizzle/photos">See more photos on our facebook page</a>
             </div>
 
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 </section>
 
 
 
 @code {
-    private List<Photo>? AllPhotos { get; set; }
+    private List<Photo>? AllPhotos { get; set; } = new List<Photo>();
 
     protected override async Task OnInitializedAsync()
     {
