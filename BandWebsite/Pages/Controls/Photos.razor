@@ -8,7 +8,7 @@
         <!-- Indicators -->
         <div class="carousel-indicators">
             @for (int i = 0; i <= AllPhotos.Count; i++){
-                <button type="button" data-bs-target="#carouselPhotos" data-bs-slide-to="@i" class="bg-dark @(i == 0 ? "active ria-current='true''" : "")" aria-label="Slide @i"></button>
+                <button type="button" data-bs-target="#carouselPhotos" data-bs-slide-to="@i" class="bg-dark @(i == 0 ? "active aria-current='true'" : "")" aria-label="Slide @i"></button>
             }
         </div>
         <!-- Items -->
@@ -16,7 +16,7 @@
             @for (int i = 0; i < AllPhotos.Count; i++)
             {
                 <div class="carousel-item @(i == 0 ? "active" : "") flex justify-center items-center w-full" data-bs-interval="5000" style="height:600px">
-                    <iframe src="@AllPhotos[i].Url" style="height:100%;width:100%;padding:70px" scrolling="no" alt="Father Bacon and the Sizzle Photo" />
+                    <img src="@AllPhotos[i].Url" style="height:500px;width:auto;padding:70px" scrolling="no" alt="Father Bacon and the Sizzle Photo" />
                 </div>
             }
 
