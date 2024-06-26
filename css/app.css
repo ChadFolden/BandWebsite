@@ -10,22 +10,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 30%;
-    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background; */
-}
-
-input, select, textarea {
-    font-family: Arial, sans-serif;
-    padding: 2px 2px 2px 2px;
+    background-size: 35%;
 }
 
 .section {
-    padding: 2rem;
     /* text-align: center; */
     position: relative;
     width: 85%;
-    height: 100%;
-    background-color: rgb(255, 255, 255, 0.95); /* Semi-transparent background */
+    height: auto;
+    background-color: rgb(237, 234, 234, 0.85); /* Semi-transparent background */
     border-style: solid;
     border-color: black;
     z-index: 2;
@@ -37,25 +30,12 @@ input, select, textarea {
     background-color: rgb(255,255,255,0);
 }
 
-.carousel-control-next,
-.carousel-control-prev /*, .carousel-indicators */ {
-    filter: invert(100%);
+.SectionContent {
+    max-width: 100%;
+    max-width: 350px; /* Maximum pixel width */
+    height: auto;
+    padding: 70px
 }
-
-.footer {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-    .footer a {
-        color: white;
-        margin: 0 0.5rem;
-        text-decoration: none;
-    }
 
 @font-face {
     font-family: 'AbstractGroovy';
