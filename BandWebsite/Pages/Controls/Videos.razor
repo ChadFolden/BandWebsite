@@ -16,13 +16,13 @@
         <div class="carousel-inner">
             @for (int i = 0; i < AllVideos.Count; i++)
             {
-                <div class="carousel-item @(i == 0 ? "active" : "")" style="height:600px;">
-                    <iframe src="@AllVideos[i].Url" style="height:100%;padding:70px" scrolling="no" allowfullscreen="allowfullscreen" alt="Father Bacon and the Sizzle Video"></iframe>
+                <div class="carousel-item @(i == 0 ? "active" : "") flex justify-center items-center w-full">
+                    <iframe src="@AllVideos[i].Url"  scrolling="no" allowfullscreen="allowfullscreen" alt="Father Bacon and the Sizzle Video"></iframe>
                 </div>
             }
 
-            <div class="carousel-item text-center align-middle" style="height: 600px;">
-                <a href="https://www.facebook.com/FatherBaconSizzle/videos">See more videos on our facebook page</a>
+            <div class="carousel-item text-center align-middle">
+                <a href="https://www.facebook.com/FatherBaconSizzle/videos" class="SectionContent">See more videos on our facebook page</a>
             </div>
         </div>
     </div>
