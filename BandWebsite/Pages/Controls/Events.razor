@@ -1,6 +1,7 @@
 ﻿@using System.Text.Json
 @using System.Text.Json.Serialization
 @inject HttpClient HttpClient
+@inject IJSRuntime JSRuntime
 
 <section id="eventsX" class="section">
     <h2>Events</h2>
@@ -23,7 +24,23 @@
                             <li class="list-group-item border border-dark table table-striped @(eventItem.index % 2 == 0 ? "bg-dark text-white": "bg-light")">
                                 <h5>@eventItem.value.Description</h5>
                                 <p>@eventItem.value.Date.ToShortDateString() @eventItem.value.Time</p>
-                                <p>@eventItem.value.Location - <a href="@eventItem.value.LocationUrl" target="_blank">More info ..</a></p>
+                                <p>
+                                    <div class="d-flex align-items-center">
+                                        @eventItem.value.Location -
+                                        <a href="@eventItem.value.LocationUrl" target="_blank" style="background: none !important; color: blue;">More info ..</a>
+                                        <div class="dropdown" style="background: none !important;">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle-second="tooltip" title="Add To Calendar" aria-expanded="false" style="background-color: transparent !important; border: none; padding: 0;">
+                                                <span style="color: black;">📅</span> 
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "Apple")'>Apple</button></li>
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "android")'>Android</button></li>
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "google")'>Google</button></li>
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "outlook")'>Outlook</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </p>
                             </li>
                         }
                     </ul>
@@ -42,7 +59,23 @@
                             <li class="list-group-item border border-dark table table-striped @(eventItem.index % 2 == 0 ? "bg-dark text-white": "bg-light")">
                                 <h5>@eventItem.value.Description</h5>
                                 <p>@eventItem.value.Date.ToShortDateString() @eventItem.value.Time</p>
-                                <p>@eventItem.value.Location - <a href="@eventItem.value.LocationUrl" target="_blank">More Info ..</a></p>
+                                <p>
+                                    <div class="d-flex align-items-center">
+                                        @eventItem.value.Location -
+                                        <a href="@eventItem.value.LocationUrl" target="_blank" style="background: none !important; color: blue;">More info ..</a>
+                                        <div class="dropdown" style="background: none !important;">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle-second="tooltip" title="Add To Calendar" aria-expanded="false" style="background-color: transparent !important; border: none; padding: 0;">
+                                                <span style="color: black;">📅</span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "Apple")'>Apple</button></li>
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "android")'>Android</button></li>
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "google")'>Google</button></li>
+                                                <li><button class="dropdown-item" @onclick='() => AddToCalendar(eventItem.value, "outlook")'>Outlook</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </p>
                             </li>
                         }
                     </ul>
@@ -67,10 +100,10 @@
         {
             var json = await response.Content.ReadAsStringAsync();
             var config = JsonSerializer.Deserialize<EventsConfig>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new DateTimeConverter() }
-            });
+                {
+                    PropertyNameCaseInsensitive = true,
+                    Converters = { new DateTimeConverter() }
+                });
             var allEvents = config?.Events ?? new List<Event>();
             var currentDate = DateTime.Now;
 
@@ -114,6 +147,29 @@
         public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(value.ToString("M/d/yyyy"));
+        }
+    }
+
+    private async Task AddToCalendar(Event eventItem, string calendarType)
+    {
+        // Invoke JavaScript function based on calendarType
+        switch (calendarType.ToLower())
+        {
+            case "apple":
+                await JSRuntime.InvokeVoidAsync("addToAppleCalendar", eventItem.Date.ToString("yyyy-MM-dd"), eventItem.Time, eventItem.Description, eventItem.Location, eventItem.LocationUrl);
+                break;
+            case "android":
+                await JSRuntime.InvokeVoidAsync("addToAndroidCalendar", eventItem.Date.ToString("yyyy-MM-dd"), eventItem.Time, eventItem.Description, eventItem.Location, eventItem.LocationUrl);
+                break;
+            case "google":
+                await JSRuntime.InvokeVoidAsync("addToGoogleCalendar", eventItem.Date.ToString("yyyy-MM-dd"), eventItem.Time, eventItem.Description, eventItem.Location, eventItem.LocationUrl);
+                break;
+            case "outlook":
+                await JSRuntime.InvokeVoidAsync("addToOutlookCalendar", eventItem.Date.ToString("yyyy-MM-dd"), eventItem.Time, eventItem.Description, eventItem.Location, eventItem.LocationUrl);
+                break;
+            default:
+                // Handle invalid input
+                break;
         }
     }
 }
