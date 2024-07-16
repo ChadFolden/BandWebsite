@@ -46,8 +46,6 @@ html, body {
 .SectionContent {
     max-width: 100%;
     max-width: 350px; /* Maximum pixel width */
-    max-height: 100%;
-    max-height: 240px;
     height: auto;
 
     padding: 70px;
@@ -56,8 +54,6 @@ html, body {
 video {
     max-width: 100%;
     max-width: 320px; /* Maximum pixel width */
-    max-height: 100%;
-    max-height: 240px;
     height: auto;
     padding: 70px;
 }
