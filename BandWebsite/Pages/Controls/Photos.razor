@@ -1,63 +1,28 @@
-﻿@using System.Text.Json
-@inject HttpClient HttpClient
-
+﻿@inject HttpClient HttpClient
 
 <section id="photosX" class="section">
     <h2>Photos</h2>
-    <div id="carouselPhotos" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            @for (int i = 0; i <= AllPhotos.Count; i++){
-                <button type="button" data-bs-target="#carouselPhotos" data-bs-slide-to="@i" class="bg-dark @(i == 0 ? "active aria-current='true'" : "")" aria-label="Slide @i"></button>
-            }
-        </div>
-        <!-- Items -->
-        <div class="carousel-inner">
-            @for (int i = 0; i < AllPhotos.Count; i++)
-            {
-                <div class="carousel-item @(i == 0 ? "active" : "") flex justify-center items-center w-full" >
-                    <img src="@AllPhotos[i].Url" class="SectionContent" scrolling="no" alt="Father Bacon and the Sizzle Photo" />
-                </div>
-            }
 
-            <div class="carousel-item">
-                <a href="https://www.facebook.com/FatherBaconSizzle/photos" class="SectionContent">See more photos on our facebook page</a>
-            </div>
-
-        </div>
+    <div class="photo-slider">
+        <div><img src="images/1.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/2.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/3.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/4.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/5.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/6.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/7.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/8.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/9.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/10.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/11.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/12.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/13.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/14.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/15.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/16.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/17.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/18.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><img src="images/19.jpg" class="SectionContent" alt="Photo" /></div>
+        <div><a href="https://www.facebook.com/FatherBaconSizzle/photos" class="SectionContent">See more photos <br />on our facebook page</a></div>
     </div>
 </section>
-
-
-
-@code {
-    private List<Photo>? AllPhotos { get; set; } = new List<Photo>();
-
-    protected override async Task OnInitializedAsync()
-    {
-        var response = await HttpClient.GetAsync("configs/PhotosConfig.json");
-        if (response.IsSuccessStatusCode)
-        {
-            var json = await response.Content.ReadAsStringAsync();
-            var config = JsonSerializer.Deserialize<PhotosConfig>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-            AllPhotos = config?.Photos;
-        }
-        else
-        {
-            AllPhotos = new List<Photo>(); // or set default values
-        }
-    }
-
-    public class PhotosConfig
-    {
-        public List<Photo> Photos { get; set; } = new();
-    }
-
-    public class Photo
-    {
-        public string Url { get; set; } = string.Empty;
-    }
-}

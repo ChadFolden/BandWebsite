@@ -1,4 +1,6 @@
-﻿@page "/"
+﻿@inject IJSRuntime JSRuntime
+
+@page "/"
 
 <div>
 
@@ -29,3 +31,13 @@
     <BandWebsite.Pages.Controls.Contact />
 
 </div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeSlickSlider");
+        }
+    }
+}

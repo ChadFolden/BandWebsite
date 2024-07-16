@@ -16,6 +16,7 @@
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="wwwroot\fonts\" />
+    <Folder Include="wwwroot\Videos\" />
   </ItemGroup>
 
   <ItemGroup>
