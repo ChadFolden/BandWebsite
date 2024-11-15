@@ -1,6 +1,20 @@
 {
   "Events": [
     {
+      "Date": "1/16/2025",
+      "Time": "6:00 PM",
+      "Location": "Deuces Wild (EAST)",
+      "LocationUrl": "https://www.facebook.com/FatherBaconSizzle/events",
+      "Description": "Father Bacon & The Sizzle - Back at Deuces Wild"
+    },
+    {
+      "Date": "12/5/2024",
+      "Time": "5:30 PM",
+      "Location": "Cheyenne Mountain Zoo",
+      "LocationUrl": "https://www.facebook.com/events/1469677977043065",
+      "Description": "Cheyenne Mountain Zoo - Electric Moonlight"
+    },
+    {
       "Date": "9/20/2024",
       "Time": "7:00 PM",
       "Location": "Storybook  Brewing",
