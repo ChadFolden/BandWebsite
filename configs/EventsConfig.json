@@ -1,6 +1,13 @@
 {
   "Events": [
     {
+      "Date": "1/17/2026",
+      "Time": "6:00 PM",
+      "Location": "Dueces Wild Brewery",
+      "LocationUrl": "https://www.facebook.com/events/894350499642090/",
+      "Description": "Father Bacon and The Sizzle at Dueces Wild - first show of 2026"
+    },    
+    {
       "Date": "11/22/2025",
       "Time": "7:00 PM",
       "Location": "Storybook Brewing",
